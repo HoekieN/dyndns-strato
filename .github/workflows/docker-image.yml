@@ -3,8 +3,6 @@ name: Create and publish a Docker image
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 env:
   REGISTRY: ghcr.io
@@ -22,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag strato-dyndns:$(date +%s)
+      run: docker build . --file Dockerfile --tag dyndns-strato:$(date +%s)
 
     - name: Log in to the Container registry
       uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1

@@ -62,7 +62,7 @@ case "$SERVICE" in
             SERVICEURL="www.duckdns.org/v3/update"
             ;;
 
-	google)
+		google)
             SERVICEURL="domains.google.com/nic/update"
             ;;
 
@@ -73,7 +73,6 @@ case "$SERVICE" in
         stratodns)
             SERVICEURL="dyndns.strato.com/nic/update"
             ;;
-
 
         *)
 			SERVICEURL="dynupdate.no-ip.com/nic/update"
