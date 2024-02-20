@@ -17,12 +17,12 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag strato-dyndns:$(date +%s)
 
-#    - name: 'Login to GitHub Container Registry'
-#      uses: docker/login-action@main
-#      with:
-#        registry: ghcr.io
-#        username: ${{github.actor}}
-#        password: ${{secrets.Docker_container}}
+    - name: 'Login to GitHub Container Registry'
+      uses: docker/login-action@main
+      with:
+        registry: ghcr.io
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUB_TOKEN}}
 
     - name: 'Login to GitHub Container Registry'
       run: |
@@ -33,7 +33,7 @@ jobs:
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
-        password: ${{ secrets.Docker_container }}
+        password: ${{ secrets.GITHUB_TOKEN }}
           
     - name: Build and push Docker image
       uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
