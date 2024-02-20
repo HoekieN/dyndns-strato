@@ -18,13 +18,13 @@ docker build --no-cache --tag docker-dynamic-dns .
 Or you can pull it:
 
 ```
-docker pull ghcr.io/hoekien/docker-dynamic-dns:main
+docker pull ghcr.io/hoekien/docker-dynamic-dns:latest
 ```
 
 To use the image, use Docker run.
 
 ```
-docker run -it --rm --name no-ip1 -e USER=username -e PASSWORD=yourpassword -e SERVICE=stratodns -e HOSTNAME=example.com -e DETECTIP=1 -e INTERVAL=5 ghcr.io/hoekien/docker-dynamic-dns:main
+docker run -it --rm --name no-ip1 -e USER=username -e PASSWORD=yourpassword -e SERVICE=stratodns -e HOSTNAME=example.com -e DETECTIP=1 -e INTERVAL=5 ghcr.io/hoekien/docker-dynamic-dns:latest
 ```
 docker-compose
 
@@ -41,7 +41,7 @@ services:
             - HOSTNAME=example.com
             - DETECTIP=1
             - INTERVAL=5
-        image: ghcr.io/hoekien/docker-dynamic-dns:main
+        image: ghcr.io/hoekien/docker-dynamic-dns:latest
 
 
 The envitonmental variables are as follows:
