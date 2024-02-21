@@ -29,6 +29,7 @@ docker run -it --rm --name no-ip1 -e USER=username -e PASSWORD=yourpassword -e S
 
 docker-compose
 ```
+version: "3.8"
 services:
     docker-dynamic-dns:
         stdin_open: true
