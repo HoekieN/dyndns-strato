@@ -110,9 +110,9 @@ then
 fi
 
 
-echo "$AUTHHEADER $USERAGENT $NOIPURL"
+#echo "$AUTHHEADER $USERAGENT $NOIPURL"
 
-	RESULT=$(wget --no-check-certificate -qO- $AUTHHEADER $USERAGENT $NOIPURL)
+	RESULT=$(wget --no-check-certificate -qO- $NOIPURL)
 
 
 	echo $RESULT
